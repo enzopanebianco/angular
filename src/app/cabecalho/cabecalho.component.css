@@ -1,0 +1,15 @@
+.BG{
+    
+    justify-content: center;
+    align-items: center;
+    background: red;
+}
+.BG a{
+    background: red;
+}
+*{
+    color: white;
+    font-family: segoe ui;
+    margin: 0;
+    padding: 0;
+}
