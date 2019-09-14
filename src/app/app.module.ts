@@ -8,19 +8,26 @@ import {ContatoService} from './contato.service';
 import {ProdutosService} from './services/produtos.service';
 import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 import { HomeComponent } from './pages/home/home.component';
-import { AboutComponent } from './pages/about/about.component'
-
+import { AboutComponent } from './pages/about/about.component';
+import { EditarComponent } from './editar/editar.component'
+import { FormsModule }   from '@angular/forms';
+import { ListIDComponent } from './list-id/list-id.component';
+import { CadastrarComponent } from './cadastrar/cadastrar.component';
 @NgModule({
   declarations: [
     AppComponent,
     ListagemComponent,
     CabecalhoComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    EditarComponent,
+    ListIDComponent,
+    CadastrarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
     ,HttpClientModule
   ],
   providers: [ContatoService,ProdutosService],

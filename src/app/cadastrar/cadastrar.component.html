@@ -1,0 +1,19 @@
+<h3>Cadastar Usuário</h3>
+<div >
+        <label>
+            Nome
+            <input placeholder="Insira o nome" [(ngModel)]="request.name">
+        </label>
+        
+        <label>
+            Email
+                <input placeholder="Insira o email" [(ngModel)]="request.email">
+        </label>
+        
+        <label>
+            Data
+            <input placeholder="Insira a data" type="date" [(ngModel)]="request.createdAt">
+        </label>
+        <button (click)="cadastrar()">Cadastrar</button>
+    </div>
+    

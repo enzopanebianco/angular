@@ -1,0 +1,18 @@
+<h5>Atualizar</h5>
+<div *ngIf="request">
+    <label>
+        Nome
+        <input placeholder="Insira o nome" [(ngModel)]="request.name">
+    </label>
+    
+    <label>
+        Email
+            <input placeholder="Insira o email" [(ngModel)]="request.email">
+    </label>
+    
+    <label>
+        Data
+        <input placeholder="Insira a data" [(ngModel)]="request.createdAt">
+    </label>
+    <button (click)="update()">Editar</button>
+</div>

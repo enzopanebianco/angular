@@ -1,13 +1,14 @@
-import { ProdutosService } from './../services/produtos.service';
 import { Component, OnInit } from '@angular/core';
 import { RequestUser, ResponseUser } from '../user.model';
+import { ProdutosService } from '../services/produtos.service';
 
 @Component({
-  selector: 'app-cabecalho',
-  templateUrl: './cabecalho.component.html',
-  styleUrls: ['./cabecalho.component.css']
+  selector: 'app-cadastrar',
+  templateUrl: './cadastrar.component.html',
+  styleUrls: ['./cadastrar.component.css']
 })
-export class CabecalhoComponent implements OnInit {
+export class CadastrarComponent implements OnInit {
+
   request:RequestUser={
     name:"",
     email:"",
