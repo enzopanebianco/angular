@@ -1,3 +1,4 @@
+import { FormmoduleModule } from './cadastrar/formmodule.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http'
@@ -13,6 +14,7 @@ import { EditarComponent } from './editar/editar.component'
 import { FormsModule }   from '@angular/forms';
 import { ListIDComponent } from './list-id/list-id.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { FormDebugComponent } from './form-debug/form-debug.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,13 +24,15 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
     AboutComponent,
     EditarComponent,
     ListIDComponent,
-    CadastrarComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
-    ,HttpClientModule
+    ,HttpClientModule,
+    
+    FormmoduleModule
   ],
   providers: [ContatoService,ProdutosService],
   bootstrap: [AppComponent]

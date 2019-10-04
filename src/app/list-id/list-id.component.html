@@ -1,16 +1,17 @@
 <h3>Perfil</h3>
 <div *ngIf="request">
     <table>
-      
+        
         <td>NOME</td>
         <td>EMAIL</td>
         <td>DATA</td>
     <br>
 </table>
-    <td >{{request.name}}</td>
+    <td >{{request.nome}}</td>
     <br>
     <td >{{request.email}}</td>
     <br>
     <td >{{request.createdAt}}</td>
+    {{nome2}}
     <a routerLink="/users/update/{{request.id}}">Editar</a>
 </div>

@@ -16,11 +16,7 @@ export class EditarComponent implements OnInit {
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
     this.service.listarId(this.id).subscribe(res=>{
-      this.request ={
-        name: res.name,
-        email:res.email,
-        createdAt:res.createdAt
-      }
+      
       console.log(this.request)
     });
   }

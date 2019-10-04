@@ -1,5 +1,5 @@
 export interface RequestUpdate{
-    name:Date;
+    name:string;
     email:string;
     createdAt:string;
 }
@@ -10,10 +10,11 @@ export interface ResponseUpdate{
 
 }
 export interface ResponseUser{
-    name:string;
-    id:string;
+    nome:string;
+    id:number;
     email:string;
-    createdAt:Date;
+    createdAt:string;
+    length:number;
 
 }
 export interface RequestUser{

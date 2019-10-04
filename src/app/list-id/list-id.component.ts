@@ -10,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListIDComponent implements OnInit {
   id:string;
-  request:ResponseUser;
+  request:Array<any>;
+  nome2:string;
+  listaVazia:number;
+  mensagem ="NENHUM COLABORADOR CADASTRADO";
   constructor(private service:ProdutosService,private route:ActivatedRoute) { }
 
   ngOnInit() {
@@ -19,14 +22,15 @@ export class ListIDComponent implements OnInit {
   listarporid(){
     this.id = this.route.snapshot.paramMap.get('id');
     this.service.listarId(this.id).subscribe(res=>{
-      this.request ={
-        id:res.id,
-        name: res.name,
-        email:res.email,
-        createdAt:res.createdAt
+      this.request=res,
+      this.listaVazia=res.length
+       
+      if (this.listaVazia==0) {
+        return this.mensagem;
       }
       
       console.log(this.request);
+      
     });
   }
 }

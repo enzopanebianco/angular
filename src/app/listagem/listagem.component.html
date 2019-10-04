@@ -7,3 +7,6 @@
     <tr><a routerLink="/listagem/{{c.id}}">Ver Mais</a></tr>
     </td>
 </ul>
+<div *ngIf="listaVazia==0">
+    {{mensagem}}
+</div>
