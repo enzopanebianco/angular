@@ -15,6 +15,7 @@ import { FormsModule }   from '@angular/forms';
 import { ListIDComponent } from './list-id/list-id.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { FormDebugComponent } from './form-debug/form-debug.component';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { FormDebugComponent } from './form-debug/form-debug.component';
     AboutComponent,
     EditarComponent,
     ListIDComponent,
+    LoginComponent,
     
   ],
   imports: [

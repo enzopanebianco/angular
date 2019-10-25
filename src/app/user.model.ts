@@ -24,3 +24,13 @@ export interface RequestUser{
     createdAt:string;
 
 }
+export interface RequestLogin{
+    email:string;
+    senha:string;
+    token:string,
+}
+export interface ResponseLogin{
+    email:string;
+    senha:string;
+    
+}

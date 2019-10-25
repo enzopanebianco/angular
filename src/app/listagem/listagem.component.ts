@@ -2,7 +2,7 @@ import { ResponseUser } from './../user.model';
 
 
 import { Component, OnInit } from '@angular/core';
-import { ContatoService } from '../contato.service';
+
 import { ProdutosService } from '../services/produtos.service';
 @Component({
   selector: 'app-listagem',
@@ -10,8 +10,9 @@ import { ProdutosService } from '../services/produtos.service';
   styleUrls: ['./listagem.component.css']
 })
 export class ListagemComponent implements OnInit {
-  contatos: ResponseUser;
+  // lista: ResponseUser;
   listaVazia:number;
+  lista:Array<any>;
   mensagem ="NENHUM COLABORADOR CADASTRADO";
   constructor(private ProdutosService: ProdutosService) { }
 
@@ -20,14 +21,12 @@ export class ListagemComponent implements OnInit {
   }
   listar() {
     this.ProdutosService.listar().subscribe(dados => {
-    this.contatos = dados
+    this.lista = dados
     this.listaVazia=dados.length
        
-    if (this.listaVazia==0) {
-      return this.mensagem;
-    }
+   
+    console.log(this.lista);
     });
-    console.log(this.contatos);
   }
 
 }

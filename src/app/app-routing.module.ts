@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { ListagemComponent } from './listagem/listagem.component';
 import { NgModule } from '@angular/core';
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'listagem/:id',component:ListIDComponent},
   {path:'about',component:AboutComponent},
   {path:'cadastrar',component:CadastrarComponent},
-  {path:'users/update/:id',component:EditarComponent}
+  {path:'users/update/:id',component:EditarComponent},
+  {path:'login',component:LoginComponent}
 ];
 
 @NgModule({

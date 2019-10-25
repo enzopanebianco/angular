@@ -1,0 +1,14 @@
+<h1>Login</h1>
+
+    <div>
+        <input [(ngModel)]="usuario.email" type="text" id="usuario">
+        <label for="usuario">Email</label>
+    </div>
+    <div>
+        <input [(ngModel)]="usuario.senha" type="text" id="Senha">
+        <label for="Senha">Senha</label>
+    </div>
+    <button type="submit" (click)="fazerLogin()">Entrar</button>
+    <div *ngIf="erro">
+        <h2>Usuario inexistente</h2>
+    </div>

@@ -1,10 +1,11 @@
 <h2>listagem</h2>
 <ul>
-    <td *ngFor="let c of contatos">
+    <td *ngFor="let c of lista.docs">
         
-    <tr>{{c.name}}</tr>
-    <tr>{{c.id}}</tr>
-    <tr><a routerLink="/listagem/{{c.id}}">Ver Mais</a></tr>
+    <tr>{{c.title}}</tr>
+    <tr>{{c._id}}</tr>
+    <tr>{{c.description}}</tr>
+    <tr><a routerLink="/listagem/{{c._id}}">Ver Mais</a></tr>
     </td>
 </ul>
 <div *ngIf="listaVazia==0">
