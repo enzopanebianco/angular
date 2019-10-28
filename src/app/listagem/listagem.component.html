@@ -1,13 +1,12 @@
 <h2>listagem</h2>
 <ul>
-    <td *ngFor="let c of lista.docs">
+    <td *ngFor="let c of lista">
         
-    <tr>{{c.title}}</tr>
-    <tr>{{c._id}}</tr>
-    <tr>{{c.description}}</tr>
-    <tr><a routerLink="/listagem/{{c._id}}">Ver Mais</a></tr>
+    <tr>{{c.tituloExperiencia}}</tr>
+    <tr>{{c.idExperiencia}}</tr>
+    <tr>{{c.descricaoExperiencia}}</tr>
     </td>
 </ul>
-<div *ngIf="listaVazia==0">
-    {{mensagem}}
+<div *ngIf="listaVazia">
+   <p>Nenhuma Experiência</p>
 </div>

@@ -1,3 +1,5 @@
+import { Guard } from './guards/authcandeactivate';
+import { AuthGuardService } from './guards/auth-guard.service';
 import { FormmoduleModule } from './cadastrar/formmodule.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -16,6 +18,10 @@ import { ListIDComponent } from './list-id/list-id.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { FormDebugComponent } from './form-debug/form-debug.component';
 import { LoginComponent } from './login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ErrorMessageComponent } from './error-message/error-message.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +32,7 @@ import { LoginComponent } from './login/login.component';
     EditarComponent,
     ListIDComponent,
     LoginComponent,
+    ErrorMessageComponent,
     
   ],
   imports: [
@@ -33,10 +40,12 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     FormsModule
     ,HttpClientModule,
+    MatProgressSpinnerModule,
+    FormmoduleModule,
     
-    FormmoduleModule
+    BrowserAnimationsModule
   ],
-  providers: [ContatoService,ProdutosService],
+  providers: [ContatoService,ProdutosService,AuthGuardService,Guard,LoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

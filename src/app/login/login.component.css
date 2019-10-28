@@ -1,0 +1,29 @@
+.erro{
+    transition: 10s;
+    opacity: 0.99;
+    background: rgb(238, 164, 164);
+    width: 30%;
+    animation: anim;
+}
+.erro p{
+    position: relative;
+    left: 30%;
+}
+.erro p:active~ .erro{
+    display: none;
+}
+.loading{
+  
+    width: 100px;
+    height: 100px;
+  
+}
+@keyframes anim{
+    from{
+        margin-bottom:-330px;
+    }
+    to{
+        margin-bottom:330px;
+        margin-left: 300px
+    }
+}
