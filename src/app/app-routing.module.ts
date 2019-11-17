@@ -12,10 +12,10 @@ import { Guard } from './guards/authcandeactivate';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
-  {path:'listagem',component:ListagemComponent,canActivate:[AuthGuardService]},
+  {path:'listagem',component:ListagemComponent},
   {path:'listagem/:id',component:ListIDComponent},
   {path:'about',component:AboutComponent},
-  {path:'cadastrar',component:CadastrarComponent,canActivate:[Guard]},
+  {path:'cadastrar',component:CadastrarComponent},
   {path:'users/update/:id',component:EditarComponent},
   {path:'login',component:LoginComponent}
 ];

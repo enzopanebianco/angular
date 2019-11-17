@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
     senha: '',
     token: ''
   }
+  btnLogin=true;
   showSpinner:boolean;
   // erro:boolean;
   loginemiiter = new EventEmitter<String>();
@@ -26,6 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() { 
+    
   }
   // errorMsg:"Usuário ou Senha Incorretos";
   erro:boolean;
@@ -36,24 +38,18 @@ export class LoginComponent implements OnInit {
       this.showSpinner=false;
     },3000)
   }
-  fazerLogin() {
+  fazerLogin(form) {
     this.loading();
+   
     const response = o(this.loginUrl)
       .post('', this.usuario)
       .query()
-      .then(res => { localStorage.setItem('token', res.token) })
+      .then(res => { localStorage.setItem('token', res.token),this.erro=false,this.btnLogin=false; })
       .catch(err => { console.log(err + "erro"),
         this.erro=true;
-        
-      
-      console.log(response);
-      })
-
-
-
-    console.log("logado:" + this.service.Autenticado());
-    console.log("admin:" + this.service.Autorizado());
-
+    })
+    console.log(form.value);  
+    this.decoded();
 
   }
   getToken(): string {
@@ -70,7 +66,17 @@ export class LoginComponent implements OnInit {
   decoded() {
     let token = localStorage.getItem('token');
     let decode = jwt_decode(token);
-    console.log(decode.id);
+    let nome = decode.nome;
+    console.log(decode);
+    return nome;
   }
+  logout(form){
+    localStorage.removeItem('token');
+    this.btnLogin=true;
+    form.setValue({
+      email:'',
+      senha:''
+    })
+  } 
   
 }

@@ -34,3 +34,8 @@ export interface ResponseLogin{
     senha:string;
     
 }
+export interface Skill{
+    idSkill: string,
+    nome: string,
+    idTipoSkill: string
+}

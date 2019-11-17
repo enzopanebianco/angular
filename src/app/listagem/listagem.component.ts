@@ -1,10 +1,12 @@
 import { ResponseUser } from './../user.model';
+import * as jwt_decode from 'jwt-decode';
 
 
 import { Component, OnInit } from '@angular/core';
 
 import { ProdutosService } from '../services/produtos.service';
 import { o } from 'odata';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-listagem',
   templateUrl: './listagem.component.html',
@@ -15,10 +17,11 @@ export class ListagemComponent implements OnInit {
   listaVazia:boolean;
   lista:Array<any>;
   mensagem ="NENHUM COLABORADOR CADASTRADO";
-  constructor(private ProdutosService: ProdutosService) { }
+  constructor(private ProdutosService: ProdutosService,private toastr:ToastrService) { }
 
   ngOnInit() {
-    this.listar();
+    // this.listar();
+    this.decoded();
   }
   quant:number;
   listar() {
@@ -31,12 +34,25 @@ export class ListagemComponent implements OnInit {
       console.log(this.lista),
       this.quant=data.length;
       if (this.quant==0) {
-        this.listaVazia=true;
+        this.toastr.info("Nenhuma Experiência")
+      }else{
+      this.toastr.success("aaa","Sucesso")
       }
-
+    })
+    .catch(err=>{
+      this.toastr.error(err,"Erro")
     })
     
+    
    
+  }
+  decoded() {
+    let token = localStorage.getItem('token');
+    let decode = jwt_decode(token);
+    let nome = decode.nome;
+    console.log(decode);
+    console.table(nome);
+    return nome;
   }
 
 }

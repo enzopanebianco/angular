@@ -1,19 +1,22 @@
 <h1>Login</h1>
-
-    <div>
-        <input [(ngModel)]="usuario.email" type="text" id="usuario">
+{{nome}}
+<form #f="ngForm">
+     <div >
+        <input [(ngModel)]="usuario.email" *ngIf="btnLogin"  type="text" id="usuario" #email='ngModel' name="email">
         <label for="usuario">Email</label>
-    </div>
-    <div>
-        <input [(ngModel)]="usuario.senha" type="text" id="Senha">
-        <label for="Senha">Senha</label>
-    </div>
-    <button type="submit" (click)="fazerLogin()">Entrar</button>
+        </div>
+        <div >
+            <input [(ngModel)]="usuario.senha" *ngIf="btnLogin" type="password" id="Senha" #senha="ngModel" name="senha" >
+            <label for="Senha">Senha</label>
+        </div>
+        <button type="submit" *ngIf="btnLogin" (click)="fazerLogin(f)">Entrar</button>
+        <button type="submit" *ngIf="!btnLogin" (click)="logout(f)">Logout</button>
+
+        <div class="erro" role="alert" *ngIf="erro">
+            <h2>Usuario inexistente</h2>
+            <p>X</p>
+        </div>
+    </form>
+        <mat-spinner *ngIf="showSpinner" class="loading" color="warn"></mat-spinner>
+        <!-- <app-error-message></app-error-message> -->
     
-    <div class="erro" role="alert" *ngIf="erro">
-        <h2>Usuario inexistente</h2>
-        <p>X</p>
-      </div>
-     
-      <mat-spinner *ngIf="showSpinner" class="loading" color="warn"></mat-spinner>
-      <!-- <app-error-message></app-error-message> -->

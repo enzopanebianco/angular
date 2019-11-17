@@ -1,4 +1,4 @@
-<form #f="ngForm" (ngSubmit)="cadastrar(f)">
+<!-- <form #f="ngForm" (ngSubmit)="cadastrar(f)">
     <h3>Cadastar Usuário</h3>
     <div class="form-group" ngModelGroup="dados">
         <label class="control-label">
@@ -113,4 +113,19 @@
             limpa_formulário_cep();
         }
     };
-</script>
+</script> -->
+
+<div>
+    <h3>Cadastrar</h3>
+    <form #f="ngForm">
+        <label>
+            Nome
+        </label>
+        <input type="text" [(ngModel)]="request.nome" #nome="ngModel" name="nome">
+        <label>
+            IdTipoSkill
+        </label>
+        <input type="text" [(ngModel)]="request.IdTipoSkill" #id="ngModel" id="nome">
+        <button (click)="cadastrar(f)">Cadastrar</button>
+    </form>
+</div>
